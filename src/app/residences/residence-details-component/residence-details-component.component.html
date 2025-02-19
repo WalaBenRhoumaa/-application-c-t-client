@@ -1,0 +1,18 @@
+<h1 style="text-align: center; padding: 25px;">Détails de la Résidence</h1>
+
+<div class="container">
+    <div *ngIf="R; else notFound">
+        <div class="card" style="width: 18rem; margin: auto;">
+            <img [src]="R.image" alt="card image cap" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">{{ R.name }}</h5>
+                <p><strong>Adresse :</strong> {{ R.address }}</p>
+                <p><strong>Statut :</strong> {{ R.status }}</p>
+            </div>
+        </div>
+    </div>
+    <!-- Affichage d'un message si l'ID est invalide -->
+    <ng-template #notFound>
+        <p style="text-align: center; color: red;">Cette résidence n'existe pas.</p>
+    </ng-template>
+</div>
