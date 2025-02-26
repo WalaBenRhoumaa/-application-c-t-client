@@ -1,0 +1,44 @@
+<h1 style="text-align: center; padding: 25px;">Liste des Résidences</h1>
+
+<div class="container">
+    <!-- Input de recherche -->
+    <div class="row mb-3">
+        <div class="col-md-6 offset-md-3">
+            <input type="text" class="form-control" placeholder="Rechercher par adresse..." [(ngModel)]="searchTerm">
+        </div>
+    </div>
+
+    <div class="row">
+        <div *ngFor="let R of getFilteredResidences()" class="col-md-4 mb-3 d-flex justify-content-center">
+            <div class="card" style="width: 12rem;">
+                <img [src]="R.image" [alt]="R.name" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{ R.name }}</h5>
+                    <h5 *ngIf="selectedResidenceId === R.id" class="card-title">{{ R.address }}</h5>
+
+                    <!-- Statut avec icône -->
+                    <div [ngSwitch]="R.status">
+                        <span *ngSwitchCase="'Disponible'" class="badge bg-success">Disponible</span>
+                        <span *ngSwitchCase="'En Construction'" class="badge bg-warning text-dark">En Construction</span>
+                        <span *ngSwitchCase="'Vendu'" class="badge bg-danger">Vendu</span>
+                        <span *ngSwitchDefault class="badge bg-secondary">Statut inconnu</span>
+                    </div>
+
+                    <!-- Bouton Like -->
+                    <button class="btn btn-outline-danger mt-2" (click)="toggleFavorite(R)">
+                        <i class="fa" [ngClass]="{'fa-heart': isFavorite(R), 'fa-heart-o': !isFavorite(R)}"></i> 
+                        {{ isFavorite(R) ? 'Unlike' : 'Like' }}
+                    </button>
+
+                    <!-- Bouton Show Location -->
+                    <a class="btn btn-primary mt-2" (click)="show(R)">Show Location</a>
+                    <button class="btn btn-info mt-2" [routerLink]="['/residences', R.id]">
+                        Show Details
+                  <  </button>
+                    <button class="btn btn-info mt-2" [routerLink]="['/add-residence']">
+                        Add Residence </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
