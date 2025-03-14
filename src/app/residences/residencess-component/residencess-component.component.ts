@@ -53,6 +53,15 @@ export class ResidencessComponentComponent {
       );
     }
 
+    delete(id:number){
+      this.resServ.deleteResidence(id).subscribe(()=>{
+        this.resServ.getResidences().subscribe(
+        data => this.listResidences= data,
+        () => console.log("Le chargement des residences ")
+      )});
+    }
+
+    
 
 
 

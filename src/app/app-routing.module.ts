@@ -5,6 +5,7 @@ import { ResidencessComponentComponent } from './residences/residencess-componen
 import { ResidenceDetailsComponentComponent } from './residences/residence-details-component/residence-details-component';
 import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
 import { AddProductComponent } from './residences/add-residence-component/add-residence-component.component';
+import { UpdateResidenceComponent } from './residences/update-residence/update-residence.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'residences', component: ResidencessComponentComponent },
   { path: 'residences/:id', component: ResidenceDetailsComponentComponent },
   { path: 'add-residence', component: AddProductComponent }, 
+  { path: 'update-residence/:id', component: UpdateResidenceComponent }, 
 
   { path: '**', component: NotFoundComponentComponent } // Wildcard rou
 ];

@@ -12,7 +12,8 @@ import { ResidencessComponentComponent } from './residences/residencess-componen
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AddProductComponent } from './residences/add-residence-component/add-residence-component.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { UpdateResidenceComponent } from './residences/update-residence/update-residence.component'
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {HttpClientModule} from '@angular/common/http'
     NotFoundComponentComponent,
     ResidenceDetailsComponentComponent,
     ResidencessComponentComponent,
-    AddProductComponent
+    AddProductComponent,
+    UpdateResidenceComponent
   ],
   imports: [
     BrowserModule,

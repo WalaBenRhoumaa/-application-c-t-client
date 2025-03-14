@@ -34,9 +34,17 @@
                     <a class="btn btn-primary mt-2" (click)="show(R)">Show Location</a>
                     <button class="btn btn-info mt-2" [routerLink]="['/residences', R.id]">
                         Show Details
-                  <  </button>
+                   </button>
                     <button class="btn btn-info mt-2" [routerLink]="['/add-residence']">
                         Add Residence </button>
+                         <!-- Bouton Supprimer -->
+                    <button class="btn btn-danger mt-2" (click)="delete(R.id)">
+                        Supprimer
+                    </button>
+                     <button class="btn btn-danger mt-2" (click)="delete(R.id)">
+                        Supprimer
+                    </button>
+                        
                 </div>
             </div>
         </div>

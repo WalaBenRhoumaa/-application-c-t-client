@@ -22,4 +22,18 @@ export class ResidenceService {
   addResidence(residence:Residence){
     return this.http.post(this.url, residence);
   }
+
+deleteResidence(id:number){
+  return this.http.delete(this.url+'/'+id);
+
+}
+
+getResidenceById(id:number){
+  return this.http.get<Residence>(this.url+'/'+id);
+}
+
+updateResidence(residence:Residence){
+  return this.http.put(this.url+'/'+residence.id, residence);
+}
+
 }
